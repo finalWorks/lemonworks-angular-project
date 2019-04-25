@@ -1,0 +1,15 @@
+<div style="background-color:rgb(224, 253, 143)">
+  <p>
+    route-demo-part05 works!
+  </p>
+  <a [routerLink]="['./routeDemoPart08']">routeDemoPart08</a>
+  <br>
+  <a [routerLink]="[{outlets: {aux: 'routeDemoPart06'}}]">Open routeDemoPart06</a>
+  <br>
+  <a [routerLink]="[{outlets: {aux: 'routeDemoPart07'}}]">Open routeDemoPart07</a>
+  <br>
+  <a [routerLink]="[{outlets: {aux: null}}]">Close</a>
+  <router-outlet></router-outlet>
+  <router-outlet name="aux"></router-outlet>
+  <a [routerLink]="['/routeDemo']">返回</a>
+</div>

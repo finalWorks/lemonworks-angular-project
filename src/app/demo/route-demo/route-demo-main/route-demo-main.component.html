@@ -1,0 +1,17 @@
+<div style="background-color:rgb(147, 174, 252)">
+  <p>
+    route-demo-main works!
+  </p>
+  <a [routerLink]="['/routeDemoPart01']" [queryParams]="{userId:101,userName:'Tom'}">routeDemoPart01(在查询参数中传参)</a>
+  <br>
+  <a [routerLink]="['/routeDemoPart02']">routeDemoPart02(在路由中传参)</a>
+  <br>
+  <a [routerLink]="['/routeDemoPart05']">routeDemoPart05(辅助路由)</a>
+  <router-outlet></router-outlet>
+  <div style="padding: 30px">
+    <p style="background-color:cornsilk; color:gray">
+      在查询参数中传参<br>
+      /product?id=1&name=2<br>
+      ActivatedRoute.queryParams[id]</p>
+  </div>
+</div> 

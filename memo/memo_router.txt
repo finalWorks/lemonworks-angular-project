@@ -1,0 +1,39 @@
+一。路由基础知识
+1.Routes：路由配置，保存着哪个URL对应着哪个组件，以及在哪个RouterOutlet中展示组件
+2.RouterOutlet：在HTML中标记路由内容呈现位置的占位符
+3.Router：负责在运行时执行路由的对象，可以通过调用其navigate和navigateByUrl方法来导航到一个指定的路由
+4.RouterLink：在HTML中声明路由导航用的指令
+5.ActivatedRoute：当前激活的路由对象，保存着当前路由的信息，如路由地址，路由参数
+
+二。在路由中传递参数
+1.在查询参数中传参
+ <a [routerLink]="['/routeDemoPart01']" [queryParams]="{userId:101,userName:'Tom'}">routeDemoPart01(在查询参数中传参)</a>
+ this.userId = this.routeInfo.snapshot.queryParams['userId'];
+ this.userName = this.routeInfo.snapshot.queryParams['userName'];
+
+2.在路由的路径中传递参数
+ { path: 'routeDemoPart03/:userId/:userName', component: RouteDemoPart03Component },
+ <a [routerLink]="['./routeDemoPart03', 102, 'Andy']">routeDemoPart03(在路由路径中传参)</a>
+ 参数快照：
+ this.userId = this.routeInfo.snapshot.params['userId'];
+ this.userName = this.routeInfo.snapshot.params['userName'];
+ 参数订阅：
+ this.routeInfo.params.subscribe((params: Params) => {
+     this.userId1 = params['userId'];
+     this.userName1 = params['userName'];
+ });
+
+3.在路由的配置中传递参数
+ { path: 'routeDemoPart04', component: RouteDemoPart04Component, data: [{ userId: 401, userName: 'Jim' }] }
+ <a [routerLink]="['./routeDemoPart04']">routeDemoPart04(在路由配置中传参)</a>
+ this.userId = this.routeInfo.snapshot.data[0]['userId'];
+ this.userName = this.routeInfo.snapshot.data[0]['userName'];
+
+ 三。辅助路由
+ 1.作用：在一个模板上提供多个插座
+ 2.根据辅助路由的name来区分不同的辅助路由，常用的name是aux，也可以自定义name，比如apple，banana等
+
+四。路由守卫
+1.CanActivate：
+2.CanDeavtivate：
+ 

@@ -8,8 +8,13 @@
   <br>
   <a [routerLink]="[{outlets: {aux: 'routeDemoPart07'}}]">Open routeDemoPart07</a>
   <br>
+  <a [routerLink]="[{outlets: {primary: 'routeDemoPart08', lzy: 'routeDemoPart09'}}]">Open routeDemoPart09(lzy)</a>
+  <br>
   <a [routerLink]="[{outlets: {aux: null}}]">Close</a>
+  <br>
+  <a [routerLink]="[{outlets: {primary: null, lzy: null}}]">Close(lzy)</a>
   <router-outlet></router-outlet>
   <router-outlet name="aux"></router-outlet>
+  <router-outlet name="lzy"></router-outlet>
   <a [routerLink]="['/routeDemo']">返回</a>
 </div>

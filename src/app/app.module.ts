@@ -26,6 +26,7 @@ import { RouteDemoPart05Component } from './demo/route-demo/route-demo-part05/ro
 import { RouteDemoPart06Component } from './demo/route-demo/route-demo-part06/route-demo-part06.component';
 import { RouteDemoPart07Component } from './demo/route-demo/route-demo-part07/route-demo-part07.component';
 import { RouteDemoPart08Component } from './demo/route-demo/route-demo-part08/route-demo-part08.component';
+import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/route-demo-part09.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -54,7 +55,8 @@ import { RouteDemoPart08Component } from './demo/route-demo/route-demo-part08/ro
     RouteDemoPart05Component,
     RouteDemoPart06Component,
     RouteDemoPart07Component,
-    RouteDemoPart08Component
+    RouteDemoPart08Component,
+    RouteDemoPart09Component
   ],
   imports: [
     BrowserModule,

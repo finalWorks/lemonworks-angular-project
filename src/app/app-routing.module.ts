@@ -1,5 +1,4 @@
-import { UnsavedGuard } from './demo/guard/unsaved.guard';
-import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { ProductListComponent } from './demo/di-demo/product-list/product-list.component';
 import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/route-demo-part09.component';
 import { RouteDemoPart08Component } from './demo/route-demo/route-demo-part08/route-demo-part08.component';
 import { RouteDemoPart07Component } from './demo/route-demo/route-demo-part07/route-demo-part07.component';
@@ -15,12 +14,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
-import { LoginGuard } from './demo/guard/login.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'product/:productId', component: ProductDetailComponent },
-  { path: 'routeDemo', component: RouteDemoMainComponent, canActivate: [LoginGuard], canDeactivate: [UnsavedGuard] },
+  { path: 'routeDemo', component: RouteDemoMainComponent },
   { path: 'routeDemoPart01', component: RouteDemoPart01Component },
   {
     path: 'routeDemoPart02', component: RouteDemoPart02Component,
@@ -38,12 +36,13 @@ const routes: Routes = [
       { path: 'routeDemoPart08', component: RouteDemoPart08Component }
     ]
   },
+  { path: 'diDemo', component: ProductListComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [LoginGuard, UnsavedGuard]
+  providers: []
 })
 export class AppRoutingModule { }

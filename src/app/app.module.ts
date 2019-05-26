@@ -1,3 +1,4 @@
+import { Product1Service } from './demo/di-demo/demo-shared/product1.service';
 import { ProductService } from './shared/product.service';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,9 @@ import { RouteDemoPart06Component } from './demo/route-demo/route-demo-part06/ro
 import { RouteDemoPart07Component } from './demo/route-demo/route-demo-part07/route-demo-part07.component';
 import { RouteDemoPart08Component } from './demo/route-demo/route-demo-part08/route-demo-part08.component';
 import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/route-demo-part09.component';
+import { Product1Component } from './demo/di-demo/product1/product1.component';
+import { Product2Component } from './demo/di-demo/product2/product2.component';
+import { ProductListComponent } from './demo/di-demo/product-list/product-list.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -56,7 +60,10 @@ import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/ro
     RouteDemoPart06Component,
     RouteDemoPart07Component,
     RouteDemoPart08Component,
-    RouteDemoPart09Component
+    RouteDemoPart09Component,
+    Product1Component,
+    Product2Component,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/ro
     // RouterModule.forRoot(routeConfig),
     ReactiveFormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, Product1Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

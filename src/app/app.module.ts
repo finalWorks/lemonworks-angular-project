@@ -42,6 +42,12 @@ import { AnotherProduct1Service } from './demo/di-demo/demo-shared/another-produ
 import { Product4Service } from './demo/di-demo/demo-shared/product4.service';
 import { Product7Component } from './demo/di-demo/product7/product7.component';
 import { Product8Component } from './demo/di-demo/product8/product8.component';
+import { BindMainComponent } from './demo/bind-demo/bind-main/bind-main.component';
+import { EventBindComponent } from './demo/bind-demo/event-bind/event-bind.component';
+import { AttributeBindComponent } from './demo/bind-demo/attribute-bind/attribute-bind.component';
+import { HtmlAttributeBindComponent } from './demo/bind-demo/html-attribute-bind/html-attribute-bind.component';
+import { TwoWayBindComponent } from './demo/bind-demo/two-way-bind/two-way-bind.component';
+import { DomAttributeBindComponent } from './demo/bind-demo/dom-attribute-bind/dom-attribute-bind.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -80,7 +86,13 @@ import { Product8Component } from './demo/di-demo/product8/product8.component';
     Product5Component,
     Product6Component,
     Product7Component,
-    Product8Component
+    Product8Component,
+    BindMainComponent,
+    EventBindComponent,
+    AttributeBindComponent,
+    HtmlAttributeBindComponent,
+    TwoWayBindComponent,
+    DomAttributeBindComponent
   ],
   imports: [
     BrowserModule,

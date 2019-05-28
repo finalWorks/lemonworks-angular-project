@@ -1,3 +1,4 @@
+import { BindMainComponent } from './demo/bind-demo/bind-main/bind-main.component';
 import { ProductListComponent } from './demo/di-demo/product-list/product-list.component';
 import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/route-demo-part09.component';
 import { RouteDemoPart08Component } from './demo/route-demo/route-demo-part08/route-demo-part08.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
     ]
   },
   { path: 'diDemo', component: ProductListComponent },
+  { path: 'bindDemo', component: BindMainComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

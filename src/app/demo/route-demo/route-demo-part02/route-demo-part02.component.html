@@ -1,25 +1,27 @@
-<div style="background-color:rgb(253, 187, 143)">
-  <p>
-    route-demo-part02 works!(子路由演示程序)
-  </p>
-  <a [routerLink]="['./routeDemoPart03', 102, 'Andy']">routeDemoPart03(在路由路径中传参)</a>
-  <input type="button" value="routeDemoPart03" (click)="toRouteDemoPart03()">
-  <br>
-  <a [routerLink]="['./routeDemoPart04']">routeDemoPart04(在路由配置中传参)</a>
-  <!-- <input type="button" value="routeDemoPart04" (click)="toRouteDemoPart04()"> -->
-  <div style="padding: 30px">
-    <p style="background-color:cornsilk; color:gray">
-      在路由路径中传参<br>
-      path:'/product/:id/:name'<br>
-      /product/1/Tom<br>
-      ActivatedRoute.params[id]</p>
-    <p style="background-color:cornsilk; color:gray">
-      在路由配置中传参<br>
-      path:'/product', component:ProductComponent, data:[$id:'1',name:'2'$]<br>
-      ActivatedRoute.data[0][id]<br>
-      *'$'代表大括号</p>
+<div style="background-color:#ebf6f7">
+  <div style="margin:20px">
+    <p>
+      route-demo-part02 works!(子路由演示程序)
+    </p>
+    <a [routerLink]="['./routeDemoPart03', 102, 'Andy']">routeDemoPart03(在路由路径中传参)</a>
+    <input style="margin-left: 20px" type="button" value="routeDemoPart03" (click)="toRouteDemoPart03()">
+    <br>
+    <a [routerLink]="['./routeDemoPart04']">routeDemoPart04(在路由配置中传参)</a>
+    <!-- <input style="margin-left: 20px" type="button" value="routeDemoPart04" (click)="toRouteDemoPart04()"> -->
+    <div style="padding: 30px">
+      <p style="background-color:#bce2e1; color:gray">
+        在路由路径中传参<br>
+        path:'/product/:id/:name'<br>
+        /product/1/Tom<br>
+        ActivatedRoute.params[id]</p>
+      <p style="background-color:#bce2e1; color:gray">
+        在路由配置中传参<br>
+        path:'/product', component:ProductComponent, data:[$id:'1',name:'2'$]<br>
+        ActivatedRoute.data[0][id]<br>
+        *'$'代表大括号</p>
+    </div>
+    <hr>
+    <router-outlet></router-outlet>
+    <a [routerLink]="['/routeDemo']">返回</a>
   </div>
-  <hr>
-  <router-outlet></router-outlet>
-  <a [routerLink]="['/routeDemo']">返回</a>
 </div>

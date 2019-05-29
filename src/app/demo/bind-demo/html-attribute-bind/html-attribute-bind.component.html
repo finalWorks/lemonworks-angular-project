@@ -1,3 +1,32 @@
 <p>
   html-attribute-bind works!
 </p>
+<div style='margin:20px'>
+  <h5>基本HTML属性绑定</h5>
+  <input [attr.value]='greeting'>
+  <button (click)='clickEvent1($event)'>通过HTML属性来更新输入内容</button>
+</div>
+<div style='margin:20px'>
+  <h5>CSS绑定</h5>
+  <div class='styleB' [class]='cssKey'>CSS展示区域A</div>
+  <div>
+    <div [class.styleB]='isB'>CSS展示区域B</div>
+    <button (click)='clickEvent2($event)'>切换</button>
+  </div>
+  <div>
+    <label>CSS属性指定（C，D）</label>
+    <input (input)='inputEvent($event)'>
+    <div [ngClass]="{'styleC': isC, 'styleD': isD}">CSS展示区域C</div>
+  </div>
+  <hr>
+  <h5>样式绑定</h5>
+  <div>
+    <div [style.background-color]="isE? 'red':'gray'">CSS展示区域D</div>
+    <button (click)='clickEvent3($event)'>切换</button>
+  </div>
+  <div>
+    <label>CSS属性指定（C，D）</label>
+    <input (input)='inputEvent($event)'>
+    <div [ngStyle]="{'background-color': isC? 'yellow':'gray'}">CSS展示区域E</div>
+  </div>
+</div>

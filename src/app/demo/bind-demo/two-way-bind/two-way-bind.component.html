@@ -1,3 +1,19 @@
 <p>
   two-way-bind works!
 </p>
+<div style='margin:20px'>
+  <h5>双向绑定</h5>
+  <div>
+    <input [value]='name' (input)='inputEvent($event)'>
+    {{name}}
+  </div>
+</div>
+<div style='margin:20px'>
+  <h5>双向绑定(Angular简便实现方式)</h5>
+  <div>
+    <input [(ngModel)]='name1'>
+    {{name1}}
+    <hr>
+    <button (click)='clickEvent($event)'>查看控制器中该项目的值</button>
+  </div>
+</div>

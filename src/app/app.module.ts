@@ -48,6 +48,7 @@ import { AttributeBindComponent } from './demo/bind-demo/attribute-bind/attribut
 import { HtmlAttributeBindComponent } from './demo/bind-demo/html-attribute-bind/html-attribute-bind.component';
 import { TwoWayBindComponent } from './demo/bind-demo/two-way-bind/two-way-bind.component';
 import { DomAttributeBindComponent } from './demo/bind-demo/dom-attribute-bind/dom-attribute-bind.component';
+import { ObservableDemoComponent } from './demo/bind-demo/observable-demo/observable-demo.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -92,7 +93,8 @@ import { DomAttributeBindComponent } from './demo/bind-demo/dom-attribute-bind/d
     AttributeBindComponent,
     HtmlAttributeBindComponent,
     TwoWayBindComponent,
-    DomAttributeBindComponent
+    DomAttributeBindComponent,
+    ObservableDemoComponent
   ],
   imports: [
     BrowserModule,

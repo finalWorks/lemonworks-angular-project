@@ -49,6 +49,13 @@ import { HtmlAttributeBindComponent } from './demo/bind-demo/html-attribute-bind
 import { TwoWayBindComponent } from './demo/bind-demo/two-way-bind/two-way-bind.component';
 import { DomAttributeBindComponent } from './demo/bind-demo/dom-attribute-bind/dom-attribute-bind.component';
 import { ObservableDemoComponent } from './demo/bind-demo/observable-demo/observable-demo.component';
+import { PipeDemoComponent } from './demo/bind-demo/pipe-demo/pipe-demo.component';
+import { MultiplePipe } from './demo/bind-demo/pipe/multiple.pipe';
+import { OrderComponent } from './demo/component-demo/order/order.component';
+import { OrderChildComponent } from './demo/component-demo/order-child/order-child.component';
+import { ComponentDemoComponent } from './demo/component-demo/component-demo/component-demo.component';
+import { PriceComponent } from './demo/component-demo/price/price.component';
+import { IntermediatorComponent } from './demo/component-demo/intermediator/intermediator.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -94,7 +101,14 @@ import { ObservableDemoComponent } from './demo/bind-demo/observable-demo/observ
     HtmlAttributeBindComponent,
     TwoWayBindComponent,
     DomAttributeBindComponent,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    PipeDemoComponent,
+    MultiplePipe,
+    OrderComponent,
+    OrderChildComponent,
+    ComponentDemoComponent,
+    PriceComponent,
+    IntermediatorComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +116,7 @@ import { ObservableDemoComponent } from './demo/bind-demo/observable-demo/observ
     FormsModule,
     HttpModule,
     // RouterModule.forRoot(routeConfig),
-    ReactiveFormsModule
+    ReactiveFormsModule // 响应式编程相关
   ],
   providers: [{
     provide: Product2Service,

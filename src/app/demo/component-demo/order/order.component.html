@@ -1,0 +1,15 @@
+<p>
+  输入属性和输出属性Demo-父组件
+</p>
+<div>
+  <input type="text" placeholder="请输入股票代码" [(ngModel)]="stock">
+  <br>
+  <input type="text" placeholder="请输入交易量" [(ngModel)]="amount">
+  <div style="background-color:rgb(255, 202, 248)">
+    <app-order-child [stockCode]="stock" [amountCnt]="amount"></app-order-child>
+  </div>
+
+  <div *ngIf="buyPriceQuote" style="background-color:rgb(255, 0, 221)">
+    <p style="color:ivory">买100手股票，买入价格是{{ buyPriceQuote.lastPrice | number:'2.2-2'}}元/每股</p>
+  </div>
+</div>

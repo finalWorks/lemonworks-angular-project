@@ -15,6 +15,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
+import { ComponentDemoComponent } from './demo/component-demo/component-demo/component-demo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,6 +40,10 @@ const routes: Routes = [
   },
   { path: 'diDemo', component: ProductListComponent },
   { path: 'bindDemo', component: BindMainComponent },
+  {
+    path: 'componentDemo', component: ComponentDemoComponent,
+    children: []
+  },
   { path: '**', component: NotFoundComponent }
 ];
 

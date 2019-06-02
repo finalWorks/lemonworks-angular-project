@@ -1,0 +1,41 @@
+<h3>
+  组件间通信Demo
+</h3>
+
+<div style="background-color:rgb(255, 164, 243)">
+  <app-order [buyPriceQuote]="buyPriceQuote"></app-order>
+</div>
+
+<div style="background-color:rgb(252, 144, 159)">
+  <p>这是第一个报价组件</p>
+  <app-price (buy)='buyHandler($event)' (lastPrice)='priceQuoteHandler($event)'></app-price>
+</div>
+<div style="background-color:rgb(255, 129, 146)">
+  <p>这是在报价组件外部，股票代码是{{priceQuote.stockCode}}，最新报价是{{priceQuote.lastPrice | number:'2.2-2'}}元/每股</p>
+</div>
+
+<div style="background-color:rgb(144, 169, 252)">
+  <p>这是第二个报价组件</p>
+  <app-price (buy)='buyHandler($event)' (anotherEventName)='anotherPriceQuoteHandler($event)'></app-price>
+</div>
+<div style="background-color:rgb(131, 129, 255)">
+  <p>这是在报价组件外部，股票代码是{{anotherPriceQuote.stockCode}}，最新报价是{{anotherPriceQuote.lastPrice | number:'2.2-2'}}元/每股</p>
+</div>
+
+<div style="background-color:rgb(144, 252, 211)">
+  <p>这是第三个报价组件</p>
+  <app-price (buy)='buyHandler($event)' (lastPrice)='priceQuoteHandler($event)' (anotherEventName)='anotherPriceQuoteHandler($event)'></app-price>
+</div>
+<div style="background-color:rgb(129, 255, 146)">
+  <p>这是在报价组件外部（发射事件1取得的结果），股票代码是{{priceQuote.stockCode}}，最新报价是{{priceQuote.lastPrice | number:'2.2-2'}}元/每股</p>
+  <p>
+    这是在报价组件外部（发射事件2取得的结果），股票代码是{{anotherPriceQuote.stockCode}}，最新报价是{{anotherPriceQuote.lastPrice | number:'2.2-2'}}元/每股
+  </p>
+</div>
+
+<div style="background-color:yellow">
+  <p>每一个报价组件是一个独立的对象，所以三个报价组件发射的最新报价信息不一致。</p>
+  <p>另外，由于第三个报价组件发射的两个流同时被外部所接受，所以第三组和第四组报价一致。</p>
+  <p style="color:hotpink">疑问1：三个报价组件如何区分？？？</p>
+  <p style="color:hotpink">疑问2：在报价组件外部，只能接受到第三个报价组件发射的信息，前两个报价组件发射的信息被覆盖了吗？？？</p>
+</div>

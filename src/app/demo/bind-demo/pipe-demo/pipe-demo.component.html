@@ -1,0 +1,17 @@
+<p>
+    管道Demo
+</p>
+<p>我的生日是{{birthday}}</p>
+<p>我的生日是{{birthday | date}}</p>
+<p>我的生日是{{birthday | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<p>我的生日是{{birthday | date | uppercase }}</p>
+<p>圆周率是{{pi | number:'2.1-4' }}</p>
+<p>自定义管道（乘法）{{number1 | multiple:number2 }}</p>
+<li>
+    <ol>date</ol>
+    <ol>uppercase</ol>
+    <ol>lowercase</ol>
+    <ol>number</ol>
+    <ol>async:可以在页面上处理流</ol>
+    <ol>等</ol>
+</li>

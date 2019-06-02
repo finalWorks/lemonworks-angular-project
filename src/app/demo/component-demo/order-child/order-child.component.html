@@ -1,0 +1,11 @@
+<p>
+  输入属性和输出属性Demo-子组件
+</p>
+<p>
+  输入属性的绑定是单向的，只能从父组件到子组件
+  子组件的值不会影响父组件的值
+</p>
+<div *ngIf="amountCnt && stockCode">
+  <h5>交易结果：</h5>
+  <p>买{{amountCnt}}手{{stockCode}}股票</p>
+</div>

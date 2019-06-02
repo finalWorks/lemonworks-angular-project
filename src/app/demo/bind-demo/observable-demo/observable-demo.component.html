@@ -1,9 +1,19 @@
 <p>
-  observable-demo works!
+    响应式编程Demo
 </p>
 <div style='margin:20px'>
-  <h5>响应式编程</h5>
+    <h5>响应式编程</h5>
+    <h5>万物都可以用流来处理</h5>
   <div>
-    <input [value]='name' (input)='inputEvent($event)'>
+      <label>cardNo1:</label>
+      <input [value]='cardNo' (keyup)='onKeyEvent1($event)'>
+      <br>
+      <label>cardNo2:</label>
+      <input #myFeild [value]='cardNo' (keyup)='onKeyEvent2(myFeild.value)'>
+      <br>
+      <label>卡片信息:</label>
+      <input [formControl]='cardInfo'>
+      <label>卡片信息(等待500ms):</label>
+      <input [formControl]='cardInfoDebounceTime'>
   </div>
 </div>

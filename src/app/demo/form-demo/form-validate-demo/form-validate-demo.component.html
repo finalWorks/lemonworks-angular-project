@@ -1,0 +1,27 @@
+<div>
+  <h3>表单校验</h3>
+</div>
+<form [formGroup]="formModel" (submit)="onSubmit()">
+  <div style="margin: 10px"><label>用户名：</label><input formControlName="userName" class="form-control" type="text"></div>
+  <div [hidden]="!formModel.hasError('required', 'userName')">
+    用户名是必填项
+  </div>
+  <div style="margin: 10px"><label>电话：</label><input formControlName="telphoneNumber" class="form-control" type="text"></div>
+  <div [hidden]="!formModel.hasError('minlength', 'telphoneNumber')">
+    请输入六位以上数字
+  </div>
+  <div formGroupName="passwordGroup">
+    <div style="margin: 10px"><label>密码：</label><input formControlName="password" class="form-control" type="password"></div>
+    <div [hidden]="!formModel.hasError('minlength', ['passwordGroup', 'password'])">
+      请输入六位以上数字
+    </div>
+    <div style="margin: 10px"><label>确认密码：</label><input formControlName="confirmPassword" class="form-control" type="password"></div>
+    <div [hidden]="!formModel.hasError('minlength', ['passwordGroup', 'confirmPassword'])">
+      请输入六位以上数字
+    </div>
+  </div>
+  <div [hidden]="!formModel.hasError('equal', 'passwordGroup')">
+    {{formModel.getError('equal', 'passwordGroup')?.descA}}
+  </div>
+  <div style="margin: 10px"><button class="btn" type="submit">提交</button></div>
+</form>

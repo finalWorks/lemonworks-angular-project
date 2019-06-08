@@ -1,0 +1,11 @@
+<div>
+  <h3>标准Form表单</h3>
+  <h5>注意：此页面不能通过Angular服务来访问，否则就是Angular代管的表单了。为了查看标准表单的效果，请用浏览器直接打开此HTML文件。</h5>
+</div>
+<form action="/regist" method="POST">
+  <div style="margin: 10px"><label>用户名：</label><input class="form-control" type="text" required pattern="[a-zA-Z0-9]+"></div>
+  <div style="margin: 10px"><label>电话：</label><input class="form-control" type="text"></div>
+  <div style="margin: 10px"><label>密码：</label><input class="form-control" type="password"></div>
+  <div style="margin: 10px"><label>确认密码：</label><input class="form-control" type="password"></div>
+  <div style="margin: 10px"><button class="btn" type="submit">提交</button></div>
+</form>

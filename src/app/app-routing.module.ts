@@ -1,3 +1,9 @@
+import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/form-validate-demo.component';
+import { FormFourDemoComponent } from './demo/form-demo/form-four-demo/form-four-demo.component';
+import { FormThreeDemoComponent } from './demo/form-demo/form-three-demo/form-three-demo.component';
+import { FormTwoDemoComponent } from './demo/form-demo/form-two-demo/form-two-demo.component';
+import { FormOneDemoComponent } from './demo/form-demo/form-one-demo/form-one-demo.component';
+import { FormDemoComponent } from './demo/form-demo/form-demo.component';
 import { LifeDemoComponent } from './demo/component-demo/life-demo/life-demo.component';
 import { BindMainComponent } from './demo/bind-demo/bind-main/bind-main.component';
 import { ProductListComponent } from './demo/di-demo/product-list/product-list.component';
@@ -48,6 +54,16 @@ const routes: Routes = [
   {
     path: 'lifeDemo', component: LifeDemoComponent,
     children: []
+  },
+  {
+    path: 'formDemo', component: FormDemoComponent,
+    children: [
+      {path: 'formOneDemo', component: FormOneDemoComponent},
+      {path: 'formTwoDemo', component: FormTwoDemoComponent},
+      {path: 'formThreeDemo', component: FormThreeDemoComponent},
+      {path: 'formFourDemo', component: FormFourDemoComponent},
+      {path: 'formValidateDemo', component: FormValidateDemoComponent}
+    ]
   },
   { path: '**', component: NotFoundComponent }
 ];

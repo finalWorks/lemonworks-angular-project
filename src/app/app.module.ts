@@ -63,6 +63,12 @@ import { OndestroyDemoComponent } from './demo/component-demo/life-demo/ondestro
 import { LifeListDemoComponent } from './demo/component-demo/life-demo/life-list-demo/life-list-demo.component';
 import { ViewLifeDemoComponent } from './demo/component-demo/life-demo/view-life-demo/view-life-demo.component';
 import { ContentLifeDemoComponent } from './demo/component-demo/life-demo/content-life-demo/content-life-demo.component';
+import { FormDemoComponent } from './demo/form-demo/form-demo.component';
+import { FormOneDemoComponent } from './demo/form-demo/form-one-demo/form-one-demo.component';
+import { FormTwoDemoComponent } from './demo/form-demo/form-two-demo/form-two-demo.component';
+import { FormThreeDemoComponent } from './demo/form-demo/form-three-demo/form-three-demo.component';
+import { FormFourDemoComponent } from './demo/form-demo/form-four-demo/form-four-demo.component';
+import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/form-validate-demo.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -122,15 +128,21 @@ import { ContentLifeDemoComponent } from './demo/component-demo/life-demo/conten
     OndestroyDemoComponent,
     LifeListDemoComponent,
     ViewLifeDemoComponent,
-    ContentLifeDemoComponent
+    ContentLifeDemoComponent,
+    FormDemoComponent,
+    FormOneDemoComponent,
+    FormTwoDemoComponent,
+    FormThreeDemoComponent,
+    FormFourDemoComponent,
+    FormValidateDemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule,// 模板式表单相关
     HttpModule,
     // RouterModule.forRoot(routeConfig),
-    ReactiveFormsModule // 响应式编程相关
+    ReactiveFormsModule // 响应式表单相关
   ],
   providers: [{
     provide: Product2Service,

@@ -1,0 +1,30 @@
+<div>
+  <h3>模板式Form表单</h3>
+  <h5>表单的数据模型是通过组件模板中的相关指令来定义的，因为使用这种方式定义表单的数据模型时，我们会受限于HTML语法，所以，模板驱动方式只适合于一些简单的场景。</h5>
+  <h5>ngForm：会自动的添加到表单上，如果不希望添加一定要指定ngNoForm</h5>
+</div>
+<!-- 由于被NgForm接管了，action属性无效 -->
+<!-- #myForm是一个模板本地变量 -->
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" action="/regist" method="POST">
+  <div style="margin: 10px"><label>用户名：</label><input #userName ngModel name="userName" class="form-control"
+      type="text"></div>
+  <div style="margin: 10px"><label>电话：</label><input ngModel name="telphoneNumber" class="form-control" type="text">
+  </div>
+  <div ngModelGroup="passwordGroup">
+    <div style="margin: 10px"><label>密码：</label><input ngModel name="password" class="form-control" type="password">
+    </div>
+    <div style="margin: 10px"><label>确认密码：</label><input ngModel name="confirmPassword" class="form-control"
+        type="password"></div>
+  </div>
+  <div style="margin: 10px"><button class="btn" type="submit">提交</button></div>
+</form>
+
+<!-- <div>
+  <h5>myForm.value</h5>
+  {{myForm.value | json}}
+</div>
+
+<div>
+  <h5>myModel对应的name.value</h5>
+  {{userName.value | json}}
+</div> -->

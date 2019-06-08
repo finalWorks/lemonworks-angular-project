@@ -1,0 +1,15 @@
+<div>
+  <h3>分布式Form表单</h3>
+  <h5>使用响应式表单时，通过编写TypeScript代码而不是HTML代码来创建一个底层的数据模型，在这个模型定义好以后，使用一些特定的指令，将模板上的HTML元素与底层的数据模型链接在一起。</h5>
+</div>
+<form [formGroup]="formModel" (submit)="onSubmit()">
+  <div style="margin: 10px"><label>用户名：</label><input formControlName="userName" class="form-control" type="text"></div>
+  <div style="margin: 10px"><label>电话：</label><input formControlName="telphoneNumber" class="form-control" type="text"></div>
+  <div formGroupName="passwordGroup">
+    <div style="margin: 10px"><label>密码：</label><input formControlName="password" class="form-control" type="password">
+    </div>
+    <div style="margin: 10px"><label>确认密码：</label><input formControlName="confirmPassword" class="form-control"
+        type="password"></div>
+  </div>
+  <div style="margin: 10px"><button class="btn" type="submit">提交</button></div>
+</form>

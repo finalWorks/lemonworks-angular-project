@@ -8,17 +8,26 @@
   <div>
     <p class="pull-right">评价总数：{{comments.length}}</p>
     <p>
-      <app-stars [rating]="product.rating"></app-stars>
+      <app-stars [rating]="product.rating | number:'1.2-2'"></app-stars>
     </p>
   </div>
 </div>
 <div class="well">
+  <div *ngIf="isCommentHidden">
+    <button cladd="btn btn-success" (click)="isCommentHidden=false">添加评论</button>
+  </div>
+  <div *ngIf="!isCommentHidden">
+    <app-stars [(rating)]="newRating" [readOnly]="false"></app-stars>
+    <textarea [(ngModel)]="newComment"></textarea>
+    <br>
+    <button class="btn" (click)="addComment()">提交</button>
+  </div>
   <div class="row" *ngFor="let comment of comments">
     <hr>
     <div class="col-md-12">
         <app-stars [rating]="comment.rating"></app-stars>
         <span>用户：{{comment.username}}</span>
-        <span class="pull-right">{{comment.timestamp }}</span>
+        <span class="pull-right">{{comment.timestamp | date:'yyyy-MM-dd HH:mm:ss'}}</span>
         <p></p>
         <p>{{comment.content}}</p>
     </div>

@@ -13,7 +13,7 @@ export class ComponentDemoComponent implements OnInit {
 
   private buyPriceQuote: PriceQuote;
 
-  constructor() { }
+  constructor() {  }
 
   ngOnInit() {
   }

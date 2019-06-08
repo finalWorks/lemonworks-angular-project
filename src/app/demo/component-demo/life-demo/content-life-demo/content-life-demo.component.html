@@ -1,0 +1,12 @@
+<div style="background-color:rgb(255, 213, 173); margin: 20px;">
+  <p>
+    content-life-demo works!
+  </p>
+  <h4>我是子组件</h4>
+  <div>这个DIV定义在子组件中</div>
+  <!-- 投影点 -->
+  <ng-content select=".header"></ng-content>
+  <div>这个DIV也定义在子组件中</div>
+  <!-- 投影点 -->
+  <ng-content select=".footer"></ng-content>
+</div>

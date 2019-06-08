@@ -1,0 +1,51 @@
+<p>
+  life-list-demo works!
+</p>
+<div style="background-color:rgb(255, 247, 179)">
+  <p>组件生命周期中各钩子:onChanges展示，请参照console内容</p>
+  <div>问候语：<input [(ngModel)]="greeting"></div>
+  <div>姓名：<input [(ngModel)]="user.name"></div>
+  <app-onchange-demo [greeting]="greeting" [user]="user"></app-onchange-demo>
+</div>
+<div style="background-color:rgb(252, 242, 155)">
+  <p>组件生命周期中各钩子:doCheck展示，请参照console内容</p>
+  <div>问候语：<input [(ngModel)]="greeting"></div>
+  <div>姓名：<input [(ngModel)]="user.name"></div>
+  <app-docheck-demo [greeting]="greeting" [user]="user"></app-docheck-demo>
+</div>
+<div style="background-color:rgb(255, 241, 117)">
+  <p>组件生命周期中各钩子:afterViewInit，afterViewChecked展示，请参照console内容</p>
+  <p>父组件调用子组件的方法。</p>
+  <app-view-life-demo #child1></app-view-life-demo>
+  <app-view-life-demo #child2></app-view-life-demo>
+  <button (click)="child1.greeting('父组件模板中调用子组件方法1');">调用child1的greeting方法</button>
+  <button (click)="child2.greeting('父组件模板中调用子组件方法2');">调用child2的greeting方法</button>
+</div>
+<div style="background-color:rgb(253, 237, 95)">
+  <p>组件生命周期中各钩子:afterContentafterContentInit，Checked展示，请参照console内容</p>
+  <div>
+    <h3>我是父组件</h3>
+    <div>这个DIV定义在父组件中</div>
+  </div>
+  <app-content-life-demo>
+    <div class="footer">
+      <p>这个DIV是父组件投影到子组件中的Footer</p>
+    </div>
+    <div class="header">
+      <p>这个DIV是父组件投影到子组件中的Header,姓名是{{user.name}}</p>
+      <p>可以将父组件的值传递给子组件，但是不能在投影中使用子组件的值</p>
+      
+      <h3>注意：</h3>
+      <h4>1.AfterView相关的事件是在“视图”初始化完毕时或“视图”变更检测完毕时触发的。（这里的视图是指子组件视图，而父组件的视图是在onInit和doCheck中完成。）</h4>
+      <h4>2.AfterContent相关的事件是在“投影”初始化完毕时或“投影”变更检测完毕时触发的。</h4>
+    </div>
+  </app-content-life-demo>
+
+  <div style="background-color:rgb(95, 253, 232)" [innerHTML]="divContent"></div>
+  <div style="background-color:rgb(126, 253, 95)" [innerHTML]="divContent1"></div>
+
+</div>
+<div style="background-color:rgb(255, 234, 46)">
+  <p>组件生命周期中各钩子:onDestroy展示，请参照console内容</p>
+  <app-ondestroy-demo></app-ondestroy-demo>
+</div>

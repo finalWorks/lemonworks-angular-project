@@ -1,3 +1,4 @@
+import { LifeDemoComponent } from './demo/component-demo/life-demo/life-demo.component';
 import { BindMainComponent } from './demo/bind-demo/bind-main/bind-main.component';
 import { ProductListComponent } from './demo/di-demo/product-list/product-list.component';
 import { RouteDemoPart09Component } from './demo/route-demo/route-demo-part09/route-demo-part09.component';
@@ -42,6 +43,10 @@ const routes: Routes = [
   { path: 'bindDemo', component: BindMainComponent },
   {
     path: 'componentDemo', component: ComponentDemoComponent,
+    children: []
+  },
+  {
+    path: 'lifeDemo', component: LifeDemoComponent,
     children: []
   },
   { path: '**', component: NotFoundComponent }

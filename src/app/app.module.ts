@@ -56,6 +56,13 @@ import { OrderChildComponent } from './demo/component-demo/order-child/order-chi
 import { ComponentDemoComponent } from './demo/component-demo/component-demo/component-demo.component';
 import { PriceComponent } from './demo/component-demo/price/price.component';
 import { IntermediatorComponent } from './demo/component-demo/intermediator/intermediator.component';
+import { LifeDemoComponent } from './demo/component-demo/life-demo/life-demo.component';
+import { OnchangeDemoComponent } from './demo/component-demo/life-demo/onchange-demo/onchange-demo.component';
+import { DocheckDemoComponent } from './demo/component-demo/life-demo/docheck-demo/docheck-demo.component';
+import { OndestroyDemoComponent } from './demo/component-demo/life-demo/ondestroy-demo/ondestroy-demo.component';
+import { LifeListDemoComponent } from './demo/component-demo/life-demo/life-list-demo/life-list-demo.component';
+import { ViewLifeDemoComponent } from './demo/component-demo/life-demo/view-life-demo/view-life-demo.component';
+import { ContentLifeDemoComponent } from './demo/component-demo/life-demo/content-life-demo/content-life-demo.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -108,7 +115,14 @@ import { IntermediatorComponent } from './demo/component-demo/intermediator/inte
     OrderChildComponent,
     ComponentDemoComponent,
     PriceComponent,
-    IntermediatorComponent
+    IntermediatorComponent,
+    LifeDemoComponent,
+    OnchangeDemoComponent,
+    DocheckDemoComponent,
+    OndestroyDemoComponent,
+    LifeListDemoComponent,
+    ViewLifeDemoComponent,
+    ContentLifeDemoComponent
   ],
   imports: [
     BrowserModule,

@@ -46,6 +46,10 @@ export class ProductService {
   getProductComments(id: number): Comment[] {
     return this.comments.filter((conmment: Comment) => conmment.productId === id);
   }
+
+  getAllCategories(): string[] {
+    return ['3C', '家电'];
+  }
 }
 
 export class Product {

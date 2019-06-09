@@ -69,6 +69,9 @@ import { FormTwoDemoComponent } from './demo/form-demo/form-two-demo/form-two-de
 import { FormThreeDemoComponent } from './demo/form-demo/form-three-demo/form-three-demo.component';
 import { FormFourDemoComponent } from './demo/form-demo/form-four-demo/form-four-demo.component';
 import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/form-validate-demo.component';
+import { AnotherFormValidationDemoComponent } from './demo/form-demo/another-form-validation-demo/another-form-validation-demo.component';
+import { MobileValidatorDirective } from './demo/form-demo/directives/mobile-validator.directive';
+import { EqualValidatorDirective } from './demo/form-demo/directives/equal-validator.directive';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -134,7 +137,10 @@ import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/f
     FormTwoDemoComponent,
     FormThreeDemoComponent,
     FormFourDemoComponent,
-    FormValidateDemoComponent
+    FormValidateDemoComponent,
+    AnotherFormValidationDemoComponent,
+    MobileValidatorDirective,
+    EqualValidatorDirective
   ],
   imports: [
     BrowserModule,

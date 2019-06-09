@@ -11,7 +11,10 @@ export function mobileValidator(control: FormControl): any {
 export function equalValidator(group: FormGroup): any {
     const password: FormControl = group.get('password') as FormControl;
     const confirmPassword: FormControl = group.get('confirmPassword') as FormControl;
-    const valid: boolean = password.value === confirmPassword.value;
+    let valid: Boolean = false;
+    if (password !== null && confirmPassword !== null) {
+        valid = password.value === confirmPassword.value;
+    }
     return valid ? null : { equal: { descA: '密码和确认密码不一致，请重新输入。' } };
 }
 
@@ -26,6 +29,9 @@ export function mobileAsyncValidator(control: FormControl): any {
 export function equalAsyncValidator(group: FormGroup): any {
     const password: FormControl = group.get('password') as FormControl;
     const confirmPassword: FormControl = group.get('confirmPassword') as FormControl;
-    const valid: boolean = password.value === confirmPassword.value;
+    let valid: Boolean = false;
+    if (password !== null && confirmPassword !== null) {
+        valid = password.value === confirmPassword.value;
+    }
     return Observable.of(valid ? null : { equal: { descA: '密码和确认密码不一致，请重新输入。' } });
 }

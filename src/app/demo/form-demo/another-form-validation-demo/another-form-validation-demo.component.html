@@ -1,0 +1,30 @@
+<div>
+  <h3>模板式表单校验</h3>
+  <h5>将校验方法生成为指令，在HTML中使用该指令即可。</h5>
+  <h5></h5>
+</div>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)" novalidate>
+  <div style="margin: 10px"><label>用户名：</label><input #userName ngModel required minlength="6" name="userName"
+      class="form-control" type="text" (input)="onUserNameInput(myForm)"></div>
+  <div [hidden]="userNameValid || userNameUntouched">
+    <div [hidden]="!myForm.form.hasError('required', 'userName')">
+      用户名是必填项
+    </div>
+  </div>
+  <div style="margin: 10px"><label>电话：</label><input ngModel name="telphoneNumber" class="form-control" type="text">
+  </div>
+  <div ngModelGroup="passwordGroup" appEqual>
+    <div style="margin: 10px"><label>密码：</label><input ngModel minlength="6" name="password" class="form-control"
+        type="password">
+    </div>
+    <div [hidden]="!myForm.form.hasError('minlength', ['passwordGroup', 'password'])">
+      请输入六位以上数字
+    </div>
+    <div style="margin: 10px"><label>确认密码：</label><input ngModel minlength="6" name="confirmPassword"
+        class="form-control" type="password"></div>
+  </div>
+  <div style="margin: 10px"><button class="btn" type="submit">提交</button></div>
+  <div [hidden]="!myForm.form.hasError('minlength', ['passwordGroup', 'confirmPassword'])">
+    请输入六位以上数字
+  </div>
+</form>

@@ -1,3 +1,4 @@
+import { AnotherFormValidationDemoComponent } from './demo/form-demo/another-form-validation-demo/another-form-validation-demo.component';
 import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/form-validate-demo.component';
 import { FormFourDemoComponent } from './demo/form-demo/form-four-demo/form-four-demo.component';
 import { FormThreeDemoComponent } from './demo/form-demo/form-three-demo/form-three-demo.component';
@@ -62,7 +63,8 @@ const routes: Routes = [
       {path: 'formTwoDemo', component: FormTwoDemoComponent},
       {path: 'formThreeDemo', component: FormThreeDemoComponent},
       {path: 'formFourDemo', component: FormFourDemoComponent},
-      {path: 'formValidateDemo', component: FormValidateDemoComponent}
+      {path: 'formValidateDemo', component: FormValidateDemoComponent},
+      {path: 'anotherFormValidateDemo', component: AnotherFormValidationDemoComponent}
     ]
   },
   { path: '**', component: NotFoundComponent }

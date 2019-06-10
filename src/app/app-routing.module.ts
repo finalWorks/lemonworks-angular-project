@@ -1,3 +1,8 @@
+import { WebSocketTwoDemoComponent } from './demo/http-demo/web-socket-two-demo/web-socket-two-demo.component';
+import { WebSocketOneDemoComponent } from './demo/http-demo/web-socket-one-demo/web-socket-one-demo.component';
+import { HttpTwoDemoComponent } from './demo/http-demo/http-two-demo/http-two-demo.component';
+import { HttpOneDemoComponent } from './demo/http-demo/http-one-demo/http-one-demo.component';
+import { HttpDemoComponent } from './demo/http-demo/http-demo.component';
 import { AnotherFormValidationDemoComponent } from './demo/form-demo/another-form-validation-demo/another-form-validation-demo.component';
 import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/form-validate-demo.component';
 import { FormFourDemoComponent } from './demo/form-demo/form-four-demo/form-four-demo.component';
@@ -65,6 +70,15 @@ const routes: Routes = [
       {path: 'formFourDemo', component: FormFourDemoComponent},
       {path: 'formValidateDemo', component: FormValidateDemoComponent},
       {path: 'anotherFormValidateDemo', component: AnotherFormValidationDemoComponent}
+    ]
+  },
+  {
+    path: 'httpDemo', component: HttpDemoComponent,
+    children: [
+      {path: 'httpOneDemo', component: HttpOneDemoComponent},
+      {path: 'httpTwoDemo', component: HttpTwoDemoComponent},
+      {path: 'webSocketOneDemo', component: WebSocketOneDemoComponent},
+      {path: 'webSocketTwoDemo', component: WebSocketTwoDemoComponent}
     ]
   },
   { path: '**', component: NotFoundComponent }

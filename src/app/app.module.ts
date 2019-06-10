@@ -1,3 +1,4 @@
+import { WebSocketService } from './demo/http-demo/shared/web-socket.service';
 import { Product3Service } from './demo/di-demo/demo-shared/product3.service';
 import { LoggerService } from './demo/di-demo/demo-shared/logger.service';
 import { Product1Service } from './demo/di-demo/demo-shared/product1.service';
@@ -72,6 +73,11 @@ import { FormValidateDemoComponent } from './demo/form-demo/form-validate-demo/f
 import { AnotherFormValidationDemoComponent } from './demo/form-demo/another-form-validation-demo/another-form-validation-demo.component';
 import { MobileValidatorDirective } from './demo/form-demo/directives/mobile-validator.directive';
 import { EqualValidatorDirective } from './demo/form-demo/directives/equal-validator.directive';
+import { HttpDemoComponent } from './demo/http-demo/http-demo.component';
+import { HttpOneDemoComponent } from './demo/http-demo/http-one-demo/http-one-demo.component';
+import { HttpTwoDemoComponent } from './demo/http-demo/http-two-demo/http-two-demo.component';
+import { WebSocketOneDemoComponent } from './demo/http-demo/web-socket-one-demo/web-socket-one-demo.component';
+import { WebSocketTwoDemoComponent } from './demo/http-demo/web-socket-two-demo/web-socket-two-demo.component';
 
 // const routeConfig: Routes = [
 //   { path: '', component: HomeComponent },
@@ -140,7 +146,12 @@ import { EqualValidatorDirective } from './demo/form-demo/directives/equal-valid
     FormValidateDemoComponent,
     AnotherFormValidationDemoComponent,
     MobileValidatorDirective,
-    EqualValidatorDirective
+    EqualValidatorDirective,
+    HttpDemoComponent,
+    HttpOneDemoComponent,
+    HttpTwoDemoComponent,
+    WebSocketOneDemoComponent,
+    WebSocketTwoDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -197,9 +208,9 @@ import { EqualValidatorDirective } from './demo/form-demo/directives/equal-valid
     provide: 'IS_DEV_ENV', useValue: true
   },
   {
-    provide: 'APP_CONFIG', useValue: {isDev: true}
+    provide: 'APP_CONFIG', useValue: { isDev: true }
   },
-    ProductService, Product1Service, LoggerService],
+    ProductService, Product1Service, LoggerService, WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

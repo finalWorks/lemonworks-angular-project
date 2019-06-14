@@ -1,7 +1,6 @@
 import { Comment, Product, ProductService } from './../shared/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-detail',
@@ -22,12 +21,8 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     const productId: number = Number('' + this.routeInfo.snapshot.params['productId']);
-    this.productService.getProduct(productId).subscribe(
-      product => this.product = product
-    );
-    this.productService.getProductComments(productId).subscribe(
-      comments => this.comments = comments
-    );
+    this.product = this.productService.getProduct(productId);
+    this.comments = this.productService.getProductComments(productId);
     let sum = this.comments.reduce((sum, comment) => sum + comment.rating, 0);
     this.product.rating = sum / this.comments.length;
   }

@@ -1,6 +1,13 @@
 <hr>
 <div class="row">
-  <div *ngFor="let product of products | async" class="col-sm-6 col-md-4">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <input type="text" placeholder="请输入商品名称" class="form-control" [formControl]="titleFilter">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let product of products | filter:'title':keyword" class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img [src]="imgUrl" alt="productInfo">
       <div class="caption">

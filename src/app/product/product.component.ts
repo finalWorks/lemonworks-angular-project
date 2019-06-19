@@ -17,6 +17,10 @@ export class ProductComponent implements OnInit {
   // 组件被实例化后，唯一调用一次。
   ngOnInit() {
     this.products = this.productService.getProducts();
+
+    this.productService.searchEvent.subscribe(
+      params => this.products = this.productService.search(params)
+    );
   }
 
 }

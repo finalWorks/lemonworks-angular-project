@@ -23,7 +23,7 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
     "jquery": "^3.4.0",
-    "jsdom": "^14.0.0",
+    "jsdom": "^16.5.0",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.26"
